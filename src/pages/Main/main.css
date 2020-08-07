@@ -1,0 +1,28 @@
+.lista{
+    text-decoration: none;
+    color: whitesmoke;
+    height: 40px;
+    font-size: 18px;
+}
+
+
+th,td{
+    color: whitesmoke;
+}
+
+.trh{
+    border-bottom: 1px solid whitesmoke;
+}
+.trd{
+    border-top: 1px solid whitesmoke;
+}
+ul {
+    padding:0;
+    list-style-type: none;
+}
+
+.linha2{
+    height: 0px;
+    border-bottom: 1px solid whitesmoke;
+    width:50%;
+}
