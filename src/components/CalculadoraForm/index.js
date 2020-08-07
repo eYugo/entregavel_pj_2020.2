@@ -46,7 +46,7 @@ function CalculadoraForm() {
 
     return (
         <>
-            <form className="form-signin text-center" onClick={handleSubmit}>
+            <form className="form-signin text-center" onSubmit={handleSubmit}>
                 <h1 className="h3 mb-3 font-weight-normal wh">Calcule a nota da P3:</h1>
                 <FormField
                     label="Nota P1"
