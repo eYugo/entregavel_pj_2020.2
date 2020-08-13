@@ -18,7 +18,9 @@ function MateriaDetailPage({ match }) {
         const item = await data.json();
 
         // Adiciona Nota da P3 no item
-        item.nota_p3 = Calculadora(item.nota_p1, item.peso_p1, item.nota_p2, item.peso_p2, item.peso_p3, item.media_pretendida)
+        const nota_p3 = Calculadora(item.nota_p1, item.peso_p1, item.nota_p2, item.peso_p2, item.peso_p3, item.media_pretendida)
+
+        item.nota_p3 = Math.round(nota_p3 * 100) / 100; //Arredondando a nota
 
         setItem(item);
     };
@@ -26,7 +28,7 @@ function MateriaDetailPage({ match }) {
     return (
         <TemplateBase>
             <div className="text-center">
-                <ul className=" mt-4">
+                <ul className=" mt-4 pb-3">
                     <li className="lista mb-3"><h4>Matéria : {item.materia}</h4></li>
                     <li className="lista">Nota P1 : {item.nota_p1}</li>
                     <li className="lista">Peso P1 : {item.peso_p1}</li>

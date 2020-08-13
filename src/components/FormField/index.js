@@ -6,7 +6,7 @@ function FormField({ label, name, value, onChange, className }) {
             <div className="input-group-prepend">
                 <label className="input-group-text">{label}</label>
             </div>
-            <input type="text" className="form-control" name={name} value={value} onChange={onChange} />
+            <input type="text" className="form-control" name={name} value={value} onChange={onChange} required />
         </div>
     );
 }

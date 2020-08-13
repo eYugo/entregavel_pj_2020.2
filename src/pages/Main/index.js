@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TemplateBase from '../../components/TemplateBase';
 import './main.css';
 import { Link } from 'react-router-dom';
-import Calculadora from '../../tools/Calculadora';
+
 
 function Main() {
     useEffect(() => {
@@ -18,33 +18,26 @@ function Main() {
         );
         const items = await data.json();
 
-        // Adiciona Nota da P3 em todos os items
-        items.map(item => (
-            item.nota_p3 = Calculadora(item.nota_p1, item.peso_p1, item.nota_p2, item.peso_p2, item.peso_p3, item.media_pretendida)
-        ))
+
 
         setItems(items);
     };
 
     return (
         <TemplateBase>
-            <table className="table table-borderless mt-4 text-center">
-                <thead>
-                    <tr className="trh">
-                        <th scope="col">Matéria :</th>
-                        <th scope="col">Nota para a P3 :</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="text-center">
+                <ul className="mt-3 pb-3">
+                    <li className="lista mb-5 fs-40">Matérias :</li>
                     {items.map(item => (
-                        <tr className="trd" key={item.id}>
-                            <td><Link style={{ color: 'whitesmoke' }} to={`/materia/${item.id}`}>{item.materia}</Link></td>
-                            <td>{item.nota_p3}</td>
-                        </tr>
+                        <>
 
+                            <li className="lista fs-35 m-4" key={item.id}>
+                                <Link style={{ color: 'whitesmoke' }} to={`/materia/${item.id}`}>{item.materia}</Link>
+                            </li>
+                        </>
                     ))}
-                </tbody>
-            </table>
+                </ul>
+            </div>
         </TemplateBase>
     );
 }
