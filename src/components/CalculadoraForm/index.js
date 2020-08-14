@@ -33,7 +33,8 @@ function CalculadoraForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const notaP3 = Calculadora(data.notaP1, data.pesoP1, data.notaP2, data.pesoP2, data.pesoP3, data.mediaDesejada);
+        const nota_P3 = Calculadora(data.notaP1, data.pesoP1, data.notaP2, data.pesoP2, data.pesoP3, data.mediaDesejada);
+        const notaP3 = Math.round(nota_P3 * 100) / 100; //Arredondando a nota
         // Adiciona Nota da P3 nos dados
         setDatum('notaP3', notaP3);
         handleShow();
